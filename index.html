@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Word Counter</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Word Counter</h1>
+
+<form action="count" method="post">
+
+<textarea id="textInput" name="text" placeholder="Enter your text here"></textarea>
+<button type="button" onclick="togglePreview()">Show Preview</button>
+
+<div id="previewSection" style="display:none;">
+    <h3>Preview</h3>
+    <div id="previewBox"></div>
+</div>
+<br><br>
+
+<br>
+
+<button type="submit">Count Words</button>
+<button type="reset">Clear</button>
+
+</form>
+
+</div>
+<script>
+const textInput = document.getElementById("textInput");
+
+function togglePreview(){
+    let section = document.getElementById("previewSection");
+
+    if(section.style.display === "none"){
+        section.style.display = "block";
+        document.getElementById("previewBox").innerText = textInput.value;
+    } else {
+        section.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
